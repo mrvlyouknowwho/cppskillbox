@@ -13,14 +13,15 @@ int main()
 	std::cout << "indebtedness: ";
 	std::cin >> indebtedness;
 
-	do {
-		std::cout << name << " Enter your sum: ";
-		std::cin >> sum;
-		draft += sum;
-		if (draft > indebtedness) balance = draft - indebtedness;
-	} while (draft < indebtedness);
+	if (indebtedness >= 0) {
+		do {
+			std::cout << name << " Enter your sum: ";
+			std::cin >> sum;
+			draft += sum;
+			if (draft > indebtedness) balance = draft - indebtedness;
+		} while (draft < indebtedness);
 
-	if (balance > 0) std::cout << "The debt is repaid, the balance on the balance sheet: " << balance;
-	else std::cout << "The debt is repaid.";
-
+		if (balance > 0) std::cout << "The debt is repaid, the balance on the balance sheet: " << balance;
+		else std::cout << "The debt is repaid.";
+	}	else std::cout << "Negative debt amount";
 };
