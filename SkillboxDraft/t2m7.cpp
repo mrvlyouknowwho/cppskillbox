@@ -4,7 +4,7 @@ int main()
 {
 	int w, m; //w - water, m - milk
 	int a = 0, l = 0; //a - americano, l - latte
-	bool work;
+	
 	std::cout << "Enter the amount of water in ml: ";
 	std::cin >> w;
 	
