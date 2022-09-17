@@ -2,16 +2,19 @@
 
 int main()
 {
-   int h; //h - height
+   int h = 0; //h - height
 
-   std::cout << "Enter the height of the Christmas tree: ";
-   std::cin >> h;
-
-   for (int x = 1; x <= h; x++)
+   while (h <= 0)
    {
-      for (int y = 1; y <= (h + x); y++)
+      std::cout << "Enter the height of the Christmas tree: ";
+      std::cin >> h;
+      if(h <= 0) std::cout << "Try again\n";
+   }
+   for (int i = 1; i <= h; i++)
+   {
+      for (int j = 1; j <= (h + i); j++)
       {
-         if (y <= (h - x + 1)) std::cout << " ";
+         if (j <= (h - i + 1)) std::cout << " ";
          else std::cout << "#";
       }
       std::cout << "\n";
