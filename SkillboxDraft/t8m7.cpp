@@ -7,11 +7,11 @@ int main()
    std::cout << "Enter the height of the Christmas tree: ";
    std::cin >> h;
 
-   for (int i = 1; i <= h; i++)
+   for (int x = 1; x <= h; x++)
    {
-      for (int j = 1; j <= (h + i); j++)
+      for (int y = 1; y <= (h + x); y++)
       {
-         if (j <= (h - i + 1)) std::cout << " ";
+         if (y <= (h - x + 1)) std::cout << " ";
          else std::cout << "#";
       }
       std::cout << "\n";
