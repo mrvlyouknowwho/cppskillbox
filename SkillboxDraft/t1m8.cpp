@@ -1,17 +1,14 @@
 #include <iostream>
-#define _USE_MATH_DEFINES
 #include <math.h>
 
 int main()
 {
-	float d; //d - degrees
-	std::cout << "Enter the pitch angle in degrees: ";
-	std::cin >> d;
+	float F, m, t;
+	std::cout << "Enter F - thrust force newtons, m - weighing kilograms, t - seconds: ";
+	std::cin >> F >> m >> t;
+		
+	float a = F / m;
+	float result = std::pow(a * t, 2) / 2;
 
-	float r; //r - radian
-
-	r = (d * M_PI) / 180.f;
-	
-	if (r <= 0.28f && r >= -0.28f) std::cout << "The corner is safe.";
-	else std::cout << "The corner is not safe!";
+	std::cout << result;
 }
