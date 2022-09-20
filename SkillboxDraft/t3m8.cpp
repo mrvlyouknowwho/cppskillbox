@@ -3,8 +3,8 @@
 
 int main()
 {
-	float h, d, w; //height x width x depth
-	int c1 = 0, c2 = 0, c3 = 0; //counters for check cube
+	float h, d, w; //height x depth x width
+	int c1 = 0, c2 = 0, c3 = 0; //counters for calculating the total number of cubes
 	float x = 0.f; //arbitrary x, for counting sets
 
 
