@@ -21,7 +21,7 @@ int main()
 				{
 					hp -= fp - resist;
 					totalDamage += fp - resist;
-					if (hp <= 0) break;
+					if (hp <= 0 || hp > 1) break;
 					else 
 					{
 						std::cout << "Hp left: " << hp << "\n";
@@ -33,8 +33,9 @@ int main()
 			}
 		}
 		else std::cout << "Try again\n";
-		if (hp <= 0)
+		if (hp <= 0 || hp > 1)
 		{
+			if (totalDamage < 0) totalDamage = 0;
 			std::cout << "Total damage: " << totalDamage << "\n";
 			break;
 		}
