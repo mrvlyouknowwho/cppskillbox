@@ -12,11 +12,7 @@ int counter(std::string l) // How many letters in a word, filters out other char
    {
       for (int i = 0; i != 26; i++) // 25 - length of alphabet
       {
-         char c = l[x];
-         if (c == alphabetU[i] || c == alphabetL[i])
-         {
-            x++;
-         }
+         if (l[x] == alphabetU[i] || l[x] == alphabetL[i])  x++;
       }
    }
    return x; //Shift for correct indexing
@@ -38,10 +34,7 @@ bool reg(char c) // check registor
    for (int i = 0; i != 26; i++) // 25 - length of alphabet
    {
       if (c == alphabetU[i]) capital = true;
-   }
-   for (int i = 0; i != 26; i++) // 25 - length of alphabet
-   {
-      if (c == alphabetL[i]) capital = false;
+      else if (c == alphabetL[i]) capital = false;
    }
    return capital;
 }
@@ -50,13 +43,11 @@ bool reg(char c) // check registor
 
 char shift(char c) // shift by one
 {
-   char x = ' ';
-   int counter = 0;
+   int counter = 1;
    if (reg(c))
    {
-      for (int i = 0; c != x; i++)
+      for (int i = 0; c != alphabetU[i]; i++)
       {
-         x = alphabetU[i];
          counter++;
          if (counter == 26) counter = 0; // 25 - length of alphabet
       }
@@ -64,14 +55,12 @@ char shift(char c) // shift by one
    }
    else
    {
-      for (int i = 0; c != x; i++)
+      for (int i = 0; c != alphabetL[i]; i++)
       {
-         x = alphabetL[i];
          counter++;
          if (counter == 26) counter = 0; // 25 - length of alphabet
       }
       c = alphabetL[counter];
-      
    }
    return c;
 }
@@ -80,32 +69,23 @@ char shift(char c) // shift by one
 
 std::string assembly(std::string l)
 {
-   int x = counter(l);
    char temp;
-   std::string result;
    
-   for (int i = 0; i != x; i++)
+   for (int i = 0; i != counter(l); i++)
    {
       temp = split(l, i);
       temp = shift(temp);
       l[i] = temp;
-      result = l;
    }
-
-
-
-
-   return result;
+   return l;
 }
 // Finished string assembly
 //----------------------------------------------------------------------//
 
 int main()
 {
-
    std::string line;
    std::cin >> line;
 
    std::cout << assembly(line);
-
 }
