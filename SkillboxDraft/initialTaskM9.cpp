@@ -4,7 +4,6 @@
 std::string alphabetU = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //0-25
 std::string alphabetL = "abcdefghijklmnopqrstuvwxyz";
 
-
 int counter(std::string l) // How many letters in a word, filters out other characters
 {
    int x = 0; // counter
@@ -19,7 +18,6 @@ int counter(std::string l) // How many letters in a word, filters out other char
 }
 // Returns the correct number needed to set the counter as an index 
 //----------------------------------------------------------------------//
-
 
 char shift(char c) // shift by one
 {
