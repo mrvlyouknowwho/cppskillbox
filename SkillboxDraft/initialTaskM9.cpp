@@ -26,10 +26,7 @@ int counter(std::string l) // How many letters in a word, filters out other char
 
 char split(std::string l, int x) //Splitting into characters
 {
-   char s = 0;
-   s = l[x];
-
-   return s;
+   return l[x];
 }
 // Splits a specific number into a separate character, for further work
 //----------------------------------------------------------------------//
@@ -112,25 +109,3 @@ int main()
    std::cout << assembly(line);
 
 }
-//bool check(char c) // alphabetical check
-//{
-//   bool capital = false;
-//
-//   for (int i = 0; i != 25; i++) // 25 - length of alphabet
-//   {
-//      if (c == alphabetU[i] || c == alphabetL[i]) capital = true;
-//   }
-//
-//   return capital;
-//}
-//// Optional check, returns True if the character is in the Alphabet
-////----------------------------------------------------------------------//
-
-
-
-
-
-
-
-
-
