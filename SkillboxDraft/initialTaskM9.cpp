@@ -15,7 +15,7 @@ std::string encrypt(std::string l)
 int main()
 {
    std::string line;
-   std::cin >> line;
+   std::getline(std::cin, line);
 
    std::cout << encrypt(line);
 }
