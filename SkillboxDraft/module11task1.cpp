@@ -13,6 +13,8 @@ std::string encrypt(std::string l, int step)
     return l;
 }
 
+std::string decoding(std::string l, int step){return encrypt(l, -step);}
+
 int main()
 {
     std::cout << "What do you want from me?\n";
@@ -30,5 +32,5 @@ int main()
     int step;
     std::cin >> step;
 
-    choice == true ? std::cout << encrypt(l, step) : std ::cout << encrypt(l, -step);
+    choice == true ? std::cout << encrypt(l, step) : std ::cout << decoding(l, step);
 }
