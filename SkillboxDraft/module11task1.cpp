@@ -32,5 +32,5 @@ int main()
     int step;
     std::cin >> step;
 
-    choice == true ? std::cout << encrypt(l, step) : std ::cout << decoding(l, step);
+    choice ? std::cout << encrypt(l, step) : std ::cout << decoding(l, step);
 }
