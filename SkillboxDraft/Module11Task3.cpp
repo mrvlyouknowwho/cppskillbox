@@ -23,7 +23,7 @@ void validate_ip(const std::string &address)
     int dot_count = 0;
     std::string string;
 
-    for(auto symbol: address)
+    for(auto symbol : address)
     {
         if(symbol == '.')
         {
@@ -40,7 +40,11 @@ void validate_ip(const std::string &address)
             else print_answer(std::string("This symbol is not digit: ") += symbol);
         }
     }
-    if(string.length() != 0) validate_octet(string);
+    if(string.empty())
+    {
+        print_answer("Last of the octets is empty!");
+    }
+    else validate_octet(string);
     dot_count != 3 ? print_answer("Amount of octets is incorrect!") : print_answer(("IP address is valid!"));
 }
 
